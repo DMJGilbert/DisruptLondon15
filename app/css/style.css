@@ -26,11 +26,15 @@
 	font-family: 'noto_sansregular';
 }
 
-.live-textcast-header, .live-textcast-header a {
+.live-textcast-header {
 	background-color: #71A117;
 	color: #fff;
 	letter-spacing: 3px;
 	padding: 20px
+}
+
+.live-textcast-header a {
+	color: #fff
 }
 
 .live-textcast-subheader {
@@ -48,7 +52,7 @@
 	padding: 0px;
 }
 
-.user-section img {
+.user-section > img {
 	float: left;
 	padding-right: 20px;
 }
@@ -66,8 +70,8 @@
 
 .no-of-people-watching {
 	position: absolute;
-	left: 20px;
-	bottom: 20px;
+	left: 10px;
+	bottom: 10px;
 	display: inline;
 }
 
@@ -79,6 +83,76 @@
 	padding: 0px 0px 0px 10px;
 }
 
+.broadcastButton {
+	border-radius: 3px;
+	background-color: #91C129;
+	letter-spacing: 3px;
+	color: #fff;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	text-align: center;
+	padding: 20px;
+	z-index: 1000000;
+}
+
+div.broadcast {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#testCircle {
+	position: absolute;
+	z-index: 1000000;
+	top: 100px;
+	left: 100px;
+}
+
+#testCircle2 {
+	position: absolute;
+	z-index: 1000000;
+	top: 300px;
+	left: 50px;
+}
+
+#testCircle3 {
+	position: absolute;
+	z-index: 1000000;
+	top: 250px;
+	left: 250px;
+}
+
+.roundText {
+	font-size: 10px;
+}
+
+.roundText:after {
+    color: #F5E9BC;
+    background-color: #0071BC;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    content: '';
+    text-transform: none;
+    font-weight: 800;
+}
+
+.roundText:before {
+    color: #F5E9BC;
+    background-color: rgba(0, 113, 188, 0.4);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    left: -13px;
+    top: -7px;
+    content: '';
+    text-transform: none;
+    font-weight: 800;
+}
 
 
 	 #warped {position: relative; display: block; width:588px; height:440px;}

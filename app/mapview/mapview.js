@@ -48,7 +48,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 
 					var html = '<div style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;" id="dick"/><span>Dick</span></div>';
 					document.getElementById("container").innerHTML = html;
+					init();
 		}
 
 	});
-
