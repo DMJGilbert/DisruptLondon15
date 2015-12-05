@@ -47,8 +47,10 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var final_x = screenPoint.x + screen_point.x;
 					var final_y = screenPoint.y + screen_point.y;
 
-					var html = '<div style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;" id="dick"/><span>Dick</span></div>';
+					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> copper box arena</h3>';
+                    
 					document.getElementById("container").innerHTML = html;
+            $('#broadcasterCircle').show().arctext({radius: 15});
 
 		}
 
