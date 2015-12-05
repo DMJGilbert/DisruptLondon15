@@ -11,7 +11,6 @@ angular.module('myApp.loginview', ['ngRoute'])
 
 .controller('LoginCtrl', function($scope) {
 	$scope.do_login = function() {
-		alert("text");
 		login_with_username($scope.login,$scope.password,function(username) {
 			alert(username);
 		});
