@@ -54,5 +54,27 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.navbar-collapse.collapse.in {display: block !important; } 
-.navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {border:none;}
+
+.navbar-collapse.collapse.in {
+    display: block !important;
+}
+
+.navbar-inverse .navbar-toggle,
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    border: none;
+}
+
+.help-him svg a:hover path,
+svg a:focus path {
+    fill: #B71C1C;
+}
+
+.help-him svg a:hover g path,
+svg a:focus g path {
+    fill: #891010;
+}
+
+.help-him svg a g path {
+    fill: #fff;
+}
