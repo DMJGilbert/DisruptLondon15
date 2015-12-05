@@ -1,1 +1,16 @@
-<h1>Woop</h1>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	 var socket = io();
+	</script>
+	<script src="twilio-reg.js"></script>
+	</head>
+	<body>
+	<button onClick="register_with_twilio('marindrew','123456', '447955585777')" >Test</button>
+
+	<button onClick="broadcast({message:'xuy'});" /></button>
+
+	</body>
+	</html>
