@@ -6,6 +6,7 @@ var longitude = 0;
 function init() {
 	socket.on('message', message_received);
 }
+init();
 
 function register_with_twilio(username, password, phoneNumber) {
 	
@@ -21,7 +22,6 @@ function register_with_twilio(username, password, phoneNumber) {
 }
 
 function broadcast(obj) {
-	alert("test");
 	if(latitude!==0)
 		obj.lat = latitude;
 	if(longitude!==0)
@@ -29,6 +29,7 @@ function broadcast(obj) {
 	socket.emit('message',obj);
 }
 function message_received(obj) {
+	alert(obj);
 	console.log(obj);
 }
 
