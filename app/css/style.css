@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'noto_sansbold';
+    src: url('../fonts/NotoSans-Bold-webfont.eot');
+    src: url('../fonts/NotoSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NotoSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/NotoSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/NotoSans-Bold-webfont.svg#noto_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'noto_sansregular';
+    src: url('../fonts/NotoSans-Regular-webfont.eot');
+    src: url('../fonts/NotoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NotoSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/NotoSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/NotoSans-Regular-webfont.svg#noto_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+	font-family: 'noto_sansregular';
+}
+
+.live-textcast-header, .live-textcast-header a {
+	background-color: #71A117;
+	color: #fff;
+	letter-spacing: 3px;
+	padding: 20px
+}
+
+.live-textcast-subheader {
+	background-color: #81B71A;
+	letter-spacing: 2px;
+	padding: 20px;
+}
+
+.user-section {
+	display: inline;
+	color: white;
+}
+
+.user-section p {
+	padding: 0px;
+}
+
+.user-section img {
+	float: left;
+	padding-right: 20px;
+}
+
+#username {
+	font-family: 'noto_sansbold';
+	margin: 10px 0 0 5px; 
+}
+
+.timestamp {
+	text-align: center;	
+	background-color: #fff;
+	border-bottom: thin solid #bbb;
+}
+
+.no-of-people-watching {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	display: inline;
+}
+
+.no-of-people-watching *{
+	display: inline;
+}
+
+.text-update-text {
+	padding: 0px 0px 0px 10px;
+}
+
+
+
+	 #warped {position: relative; display: block; width:588px; height:440px;}
+
+	 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
+	 -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
+	 100%; -ms-transform-origin:50% 100%; transform-origin:50% 100%; }
+
+	 #warped span{font-family:'ABeeZee';font-size:38px;font-weight:regular;font-style:normal;
+	 line-height:0.65; white-space:pre; overflow:visible; padding:0px;}
+
+	 #warped .w0 {-moz-transform: rotate(-7.85rad);-webkit-transform: rotate(-7.85rad);-o-transform:
+	 rotate(-7.85rad);-ms-transform: rotate(-7.85rad); transform: rotate(-7.85rad);
+	 width: 21px; height: 24px; left: 29.5px; top: 194.8px;}
+
+	 #warped .w1 {-moz-transform: rotate(-7.73rad);-webkit-transform: rotate(-7.73rad);-o-transform:
+	 rotate(-7.73rad);-ms-transform: rotate(-7.73rad); transform: rotate(-7.73rad);
+	 width: 23px; height: 24px; left: 30.21px; top: 168.61px;}
+
+	 #warped .w2 {-moz-transform: rotate(-7.6rad);-webkit-transform: rotate(-7.6rad);-o-transform:
+	 rotate(-7.6rad);-ms-transform: rotate(-7.6rad); transform: rotate(-7.6rad);
+	 width: 15px; height: 24px; left: 38.86px; top: 145.02px;}
+
+	 #warped .w3 {-moz-transform: rotate(-7.45rad);-webkit-transform: rotate(-7.45rad);-o-transform:
+	 rotate(-7.45rad);-ms-transform: rotate(-7.45rad); transform: rotate(-7.45rad);
+	 width: 21px; height: 24px; left: 43.51px; top: 123.17px;}
+
+	 #warped .w4 {-moz-transform: rotate(-7.28rad);-webkit-transform: rotate(-7.28rad);-o-transform:
+	 rotate(-7.28rad);-ms-transform: rotate(-7.28rad); transform: rotate(-7.28rad);
+	 width: 15px; height: 24px; left: 57.18px; top: 103.4px;}
+
+	 #warped .w5 {-moz-transform: rotate(-7.14rad);-webkit-transform: rotate(-7.14rad);-o-transform:
+	 rotate(-7.14rad);-ms-transform: rotate(-7.14rad); transform: rotate(-7.14rad);
+	 width: 11px; height: 24px; left: 69.99px; top: 89.14px;}
+
+	 #warped .w6 {-moz-transform: rotate(-6.99rad);-webkit-transform: rotate(-6.99rad);-o-transform:
+	 rotate(-6.99rad);-ms-transform: rotate(-6.99rad); transform: rotate(-6.99rad);
+	 width: 15px; height: 24px; left: 80.85px; top: 76.51px;}
+
+	 #warped .w7 {-moz-transform: rotate(-6.79rad);-webkit-transform: rotate(-6.79rad);-o-transform:
+	 rotate(-6.79rad);-ms-transform: rotate(-6.79rad); transform: rotate(-6.79rad);
+	 width: 21px; height: 24px; left: 96.78px; top: 63.45px;}
+
+	 #warped .w8 {-moz-transform: rotate(-6.59rad);-webkit-transform: rotate(-6.59rad);-o-transform:
+	 rotate(-6.59rad);-ms-transform: rotate(-6.59rad); transform: rotate(-6.59rad);
+	 width: 19px; height: 24px; left: 120.61px; top: 53.75px;}
+
+	 #warped .w9 {-moz-transform: rotate(-6.4rad);-webkit-transform: rotate(-6.4rad);-o-transform:
+	 rotate(-6.4rad);-ms-transform: rotate(-6.4rad); transform: rotate(-6.4rad);
+	 width: 15px; height: 24px; left: 144.4px; top: 49.24px;}
+
+	 #warped .w10 {-moz-transform: rotate(-6.25rad);-webkit-transform: rotate(-6.25rad);-o-transform:
+	 rotate(-6.25rad);-ms-transform: rotate(-6.25rad); transform: rotate(-6.25rad);
+	 width: 11px; height: 24px; left: 164.8px; top: 48.56px;}
+
+	 #warped .w11 {-moz-transform: rotate(-6.13rad);-webkit-transform: rotate(-6.13rad);-o-transform:
+	 rotate(-6.13rad);-ms-transform: rotate(-6.13rad); transform: rotate(-6.13rad);
+	 width: 10px; height: 24px; left: 180.61px; top: 50.11px;}
+
+	 #warped .w12 {-moz-transform: rotate(-5.96rad);-webkit-transform: rotate(-5.96rad);-o-transform:
+	 rotate(-5.96rad);-ms-transform: rotate(-5.96rad); transform: rotate(-5.96rad);
+	 width: 23px; height: 24px; left: 194.38px; top: 55.24px;}
+
+	 #warped .w13 {-moz-transform: rotate(-5.76rad);-webkit-transform: rotate(-5.76rad);-o-transform:
+	 rotate(-5.76rad);-ms-transform: rotate(-5.76rad); transform: rotate(-5.76rad);
+	 width: 15px; height: 24px; left: 220.53px; top: 65.41px;}
+
+	 #warped .w14 {-moz-transform: rotate(-5.56rad);-webkit-transform: rotate(-5.56rad);-o-transform:
+	 rotate(-5.56rad);-ms-transform: rotate(-5.56rad); transform: rotate(-5.56rad);
+	 width: 23px; height: 24px; left: 236.14px; top: 79.62px;}
+
+	 #warped .w15 {-moz-transform: rotate(-5.39rad);-webkit-transform: rotate(-5.39rad);-o-transform:
+	 rotate(-5.39rad);-ms-transform: rotate(-5.39rad); transform: rotate(-5.39rad);
+	 width: 11px; height: 24px; left: 257.18px; top: 95.39px;}
+
+	 #warped .w16 {-moz-transform: rotate(-5.21rad);-webkit-transform: rotate(-5.21rad);-o-transform:
+	 rotate(-5.21rad);-ms-transform: rotate(-5.21rad); transform: rotate(-5.21rad);
+	 width: 31px; height: 24px; left: 261.25px; top: 116.75px;}
+
+	 #warped .w17 {-moz-transform: rotate(-5rad);-webkit-transform: rotate(-5rad);-o-transform:
+	 rotate(-5rad);-ms-transform: rotate(-5rad); transform: rotate(-5rad); width:
+	 21px; height: 24px; left: 278.05px; top: 145.89px;}
+
+	 #warped .w18 {-moz-transform: rotate(-4.85rad);-webkit-transform: rotate(-4.85rad);-o-transform:
+	 rotate(-4.85rad);-ms-transform: rotate(-4.85rad); transform: rotate(-4.85rad);
+	 width: 23px; height: 24px; left: 282.64px; top: 172.46px;}
+
+	 #warped .w19 {-moz-transform: rotate(-4.74rad);-webkit-transform: rotate(-4.74rad);-o-transform:
+	 rotate(-4.74rad);-ms-transform: rotate(-4.74rad); transform: rotate(-4.74rad);
+	 width: 13px; height: 24px; left: 289.42px; top: 195.05px;}
