@@ -11,8 +11,8 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		$scope.map = {
 			options: {
 				basemap: 'gray',
-				center: [-0.021, 51.54],
-				zoom: 13,
+				center: [-0.0222079, 51.5443536],
+				zoom: 15,
 				sliderStyle: 'small'
 			}
 		};
@@ -22,7 +22,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 				new dojo.Color([10, 10, 10])).setAlign(esri.symbol.TextSymbol.ALIGN_START).setFont(
 				new esri.symbol.Font(((map.getZoom() * map.getZoom()) * .05) + "pt").setFamily('arial').setWeight(esri.symbol.Font.WEIGHT_BOLD));
 
-			var graphic = esri.Graphic(new esri.geometry.Point(-0.021, 51.54), text);
+			var graphic = esri.Graphic(new esri.geometry.Point(-0.0222079, 51.5443536), text);
 			map.graphics.add(graphic)
 		}
 
