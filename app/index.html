@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Map</a>
+                <a class="navbar-brand" href="#/mapview">Map</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -50,28 +50,19 @@
 
         <div id="map">
             <div ng-view></div>
-            <h1>Map here</h1>
-
-            <div>
-                Angular seed app: v<span app-version></span>
-            </div>
         </div>
         
     </div>
-    <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-    <script src="js/angular-esri-map.min.js"></script>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://js.arcgis.com/3.15compact"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="view1/view1.js"></script>
     <script src="view2/view2.js"></script>
-    <script src="components/version/version.js"></script>
-    <script src="components/version/version-directive.js"></script>
-    <script src="components/version/interpolate-filter.js"></script>
+	<script src="mapview/mapview.js"></script>
+	<script src="js/angular-esri-map.min.js"></script>
 </body>
 
 </html>
