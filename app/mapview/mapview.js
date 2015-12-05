@@ -7,12 +7,14 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		controller: 'SimpleMapCtrl'
 	});
 }]).controller('SimpleMapCtrl', function ($scope) {
-	$scope.map = {
+
+    $scope.map = {
 		options: {
-			basemap: 'topo',
-			center: [-122.45, 37.75],
+			basemap: 'gray',
+			center: [-0.021,51.54],
 			zoom: 13,
 			sliderStyle: 'small'
 		}
 	};
+    
 });
