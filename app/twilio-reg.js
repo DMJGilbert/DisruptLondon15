@@ -23,7 +23,7 @@ function register_with_twilio(username, password, phoneNumber) {
 	});
 }
 
-function login(username, password,callback) {
+function login_with_username(username, password,callback) {
 	$.ajax({
 	  type: "POST",
 	  url: _server+"api/login",
@@ -31,6 +31,8 @@ function login(username, password,callback) {
 	  cache: false,
 	  success: function(data){
 	     USERNAME = data.username;
+	     if(typeof USERNAME === "undefined")
+	     	USERNAME=null;
 	    if(callback)
 	     	callback(USERNAME);
 	  }
