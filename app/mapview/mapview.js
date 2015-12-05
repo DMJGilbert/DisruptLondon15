@@ -8,6 +8,8 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		});
 }]).controller('SimpleMapCtrl', function ($scope) {
 		var esriMap;
+        var longitude;
+        var latitude;
 
 
 		$scope.map = {
@@ -33,14 +35,22 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 			//var graphic = esri.Graphic(point, text);
 			//map.graphics.add(graphic)
 		}
+        
+        socket.on('message', socket_received);
+        function socket_received(obj) {
+            longitude = obj.lon;
+            latitude = obj.lat;
+            generateDiv(esriMap, obj.lon, obj.lat);
+        }
 
 		function changeHandler(evt) {
-			generateDiv(esriMap);
+			generateDiv(esriMap, longitude, latitude);
 		}
 
-		function generateDiv(map) {
-
-					var point = new esri.geometry.Point(-0.0222079, 51.5443536);
+    
+    		function generateDiv(map, lon, lat) {
+                if(lon){
+					var point = new esri.geometry.Point(lon, lat);
 					var screenPoint = map.toScreen(point);
 
 					var screen_point = map.position;
@@ -51,6 +61,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
                     
 					document.getElementById("container").innerHTML = html;
             $('#broadcasterCircle').show().arctext({radius: 15});
+                }
 
 		}
 
