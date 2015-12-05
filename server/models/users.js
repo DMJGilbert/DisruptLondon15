@@ -6,6 +6,11 @@ var userSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	phoneNumber: {
+		type: String,
+		required: true
+	},
+	activationKey: String,
 	provider: String,
 	admin: Boolean,
 	password: String,
@@ -21,6 +26,7 @@ userSchema.pre('save', function (next) {
 	if (!user.createdAt) {
 		user.createdAt = now;
 		user.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+		user.activationKey = crypto.randomBytes(64).toString('hex');
 	}
 	if (!user.isModified('password') || user.provider != 'local') {
 		return next();
