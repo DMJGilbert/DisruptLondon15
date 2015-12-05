@@ -10,7 +10,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 
     $scope.map = {
 		options: {
-			basemap: 'oceans',
+			basemap: 'gray',
 			center: [-0.021,51.54],
 			zoom: 13,
 			sliderStyle: 'small'
