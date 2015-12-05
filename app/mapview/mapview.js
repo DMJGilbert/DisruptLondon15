@@ -8,19 +8,10 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 	});
 }]).controller('SimpleMapCtrl', function ($scope) {
 
-    if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(location){
-      $scope.$apply(function(){
-        //var pt = new Point(location.coords.longitude, location.coords.latitude);
-        //  $scope.map.centerAndZoom(pt, 12);
-      });
-    });
-  }
-    
     $scope.map = {
 		options: {
 			basemap: 'oceans',
-			center: [-122.45, 37.75],
+			center: [-0.021,51.54],
 			zoom: 13,
 			sliderStyle: 'small'
 		}
