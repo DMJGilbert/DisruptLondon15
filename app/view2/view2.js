@@ -35,6 +35,9 @@ angular.module('myApp.view2', ['ngRoute'])
 			if($scope.messages.length>1) {
 				$scope.messages[1].final = 1;
 			}
+			if($scope.messages.length>10) {
+				$scope.messages.pop();
+			}
 		})
 	}
 	function editable_received(text) {
