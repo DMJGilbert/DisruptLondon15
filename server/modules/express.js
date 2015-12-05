@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var helmet = require('helmet');
-var passport = require('passport');
 var flash = require('connect-flash');
 var path = require('path');
 
@@ -42,10 +41,6 @@ app.use(methodOverride());
 // Enable jsonp
 app.enable('jsonp callback');
 
-// use passport session
-app.use(passport.initialize());
-app.use(passport.session());
-
 // connect flash for flash messages
 app.use(flash());
 
@@ -68,6 +63,7 @@ config.getGlobbedFiles('./server/routes/http/**/*.js').forEach(function (routePa
 });
 
 io.on('connect', function (socket) {
+	io.emit('users',io.sockets.sockets.length);
 	config.getGlobbedFiles('./server/routes/ws/**/*.js').forEach(function (routePath) {
 		try {
 			require(path.resolve(routePath))(app, io, socket);

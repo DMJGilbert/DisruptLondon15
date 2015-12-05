@@ -3,10 +3,12 @@ var latitude = 0;
 var longitude = 0;
 
 var USERNAME;
+var USERS_CONNECTED;
 
 
 function init() {
 	socket.on('message', message_received);
+	socket.on('users', users_connected);
 }
 init();
 
@@ -48,6 +50,9 @@ function broadcast(obj) {
 }
 function message_received(obj) {
 	console.log(obj);
+}
+function users_connected(count) {
+	USERS_CONNECTED = count;
 }
 
 
