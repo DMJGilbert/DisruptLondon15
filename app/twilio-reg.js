@@ -15,5 +15,6 @@ function register_with_twilio(username, password, phoneNumber) {
 }
 
 function broadcast(obj) {
+	alert("test");
 	socket.emit('message',obj);
 }
