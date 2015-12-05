@@ -24,6 +24,8 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 
 			var graphic = esri.Graphic(new esri.geometry.Point(-0.0222079, 51.5443536), text);
 			map.graphics.add(graphic)
+			init();
+
 		}
 
 	});
