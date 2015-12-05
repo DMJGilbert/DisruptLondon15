@@ -68,6 +68,7 @@ config.getGlobbedFiles('./server/routes/http/**/*.js').forEach(function (routePa
 });
 
 io.on('connect', function (socket) {
+	io.emit('users',io.sockets.sockets.length);
 	config.getGlobbedFiles('./server/routes/ws/**/*.js').forEach(function (routePath) {
 		try {
 			require(path.resolve(routePath))(app, io, socket);
