@@ -6,7 +6,7 @@
 
 <div class="live-textcast-subheader">
 	<div class="user-section">
-		<img src="img/profile-pic.png" />
+		<img src="img/andriy.png" />
 		<p id="username"> Andriy Marin </p>
 		<p> <img src="img/location-arrow.png"/> London, UK </p>
 	</div>
@@ -20,13 +20,16 @@
 	<p class="text-update-text">{{message.message}}</p>
 </div>
 
-<div class="no-of-people-watching">
-	<img src="img/user.png" />
-	<div>46</div>
+<div class="bottom-holder">
+	<div class="no-of-people-watching">
+		<img src="img/user.png" />
+		<div>3</div>
+	</div>
+	<div id="input-field">
+		<input type="text" text="fuck" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text"><button ng-click="global_text_save()">Complete Message</button>
+	</div>
 </div>
 
-
-<input type="text" text="fuck" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text"><button ng-click="global_text_save()"></button>
 
 
 <!-- <div id='warped'>
