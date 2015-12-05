@@ -1,11 +1,14 @@
-var _server = "http://172.20.10.12:3000/";
+var _server = "";
 var latitude = 0;
 var longitude = 0;
+
+var USERNAME;
 
 
 function init() {
 	socket.on('message', message_received);
 }
+init();
 
 function register_with_twilio(username, password, phoneNumber) {
 	
@@ -20,8 +23,19 @@ function register_with_twilio(username, password, phoneNumber) {
 	});
 }
 
+function login(username, password) {
+	$.ajax({
+	  type: "POST",
+	  url: _server+"api/login",
+	  data: {username:username,password:password},
+	  cache: false,
+	  success: function(data){
+	     USERNAME = data.username;
+	  }
+	});
+}
+
 function broadcast(obj) {
-	alert("test");
 	if(latitude!==0)
 		obj.lat = latitude;
 	if(longitude!==0)
