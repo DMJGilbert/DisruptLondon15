@@ -29,7 +29,6 @@ function broadcast(obj) {
 	socket.emit('message',obj);
 }
 function message_received(obj) {
-	alert(obj);
 	console.log(obj);
 }
 

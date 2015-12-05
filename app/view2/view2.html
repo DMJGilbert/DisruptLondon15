@@ -15,9 +15,9 @@
 	</div>
 </div>
 
-<div class="text-update">
-	<p class="timestamp"> 15:39 </p>
-	<p class="text-update-text"> Lorem ipsum dolor sit amet </p>
+<div class="text-update" ng-repeat="message in messages">
+	<p class="timestamp"> {{message.time}} </p>
+	<p class="text-update-text">{{message.message}}</p>
 </div>
 
 <div class="no-of-people-watching">
@@ -25,6 +25,8 @@
 	<div>46</div>
 </div>
 
+
+<input type="text" text="fuck" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text"><button ng-click="global_text_save()"></button>
 
 
 <!-- <div id='warped'>
