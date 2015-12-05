@@ -68,19 +68,27 @@
 	border-bottom: thin solid #bbb;
 }
 
-.no-of-people-watching {
+.bottom-holder {
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
+}
+
+#input-field input{
+	width: 215px;
+}
+
+.no-of-people-watching {
 	display: inline;
 }
 
 .no-of-people-watching *{
 	display: inline;
+	margin-bottom: 5px;
 }
 
 .text-update-text {
-	padding: 0px 0px 0px 10px;
+	padding: 0px 0px 10px 10px;
 }
 
 .broadcastButton {
@@ -129,12 +137,12 @@ div.broadcast {
 .roundText:after {
     color: #F5E9BC;
     background-color: #0071BC;
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     position: absolute;
     top: 19px;
-    left: 13px;
+    left: 15px;
     content: '';
     text-transform: none;
     font-weight: 800;
@@ -143,12 +151,12 @@ div.broadcast {
 .roundText:before {
     color: #F5E9BC;
     background-color: rgba(0, 113, 188, 0.4);
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     position: absolute;
-    left: -13px;
-    top: -7px;
+    left: -7px;
+    top: -3px;
     content: '';
     text-transform: none;
     font-weight: 800;
