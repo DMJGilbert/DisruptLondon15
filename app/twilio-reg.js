@@ -1,6 +1,8 @@
-var _server = "http://172.20.10.12:3000/";
+var _server = "";
 var latitude = 0;
 var longitude = 0;
+
+var USERNAME;
 
 
 function init() {
@@ -17,6 +19,18 @@ function register_with_twilio(username, password, phoneNumber) {
 	  cache: false,
 	  success: function(data){
 	     alert(data);
+	  }
+	});
+}
+
+function login(username, password) {
+	$.ajax({
+	  type: "POST",
+	  url: _server+"api/login",
+	  data: {username:username,password:password},
+	  cache: false,
+	  success: function(data){
+	     USERNAME = data.username;
 	  }
 	});
 }

@@ -31,7 +31,10 @@ angular.module('myApp.view2', ['ngRoute'])
 	}
 	function new_received(text) {
 		$scope.$apply(function() {
-			$scope.messages.push({message:text, time: currentDate()});
+			$scope.messages.unshift({message:text, time: currentDate()});
+			if($scope.messages.length>1) {
+				$scope.messages[1].final = 1;
+			}
 		})
 	}
 	function editable_received(text) {
@@ -41,8 +44,8 @@ angular.module('myApp.view2', ['ngRoute'])
 		else 
 		{
 			$scope.$apply(function() {
-				$scope.messages[$scope.messages.length-1].message = text;
-				$scope.messages[$scope.messages.length-1].time = currentDate();
+				$scope.messages[0].message = text;
+				$scope.messages[0].time = currentDate();
 					
 			})
 		}
