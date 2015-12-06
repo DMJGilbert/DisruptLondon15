@@ -4,7 +4,7 @@
 	</a>
 </div>
 
-<div class="live-textcast-subheader" id="live-textcast-subheader">
+<div class="live-textcast-subheader " id="live-textcast-subheader">
 	<div class="user-section">
 		<img src="img/andriy.png" />
 		<p id="username"> Andriy Marin </p>
@@ -14,8 +14,8 @@
 		<img src=""/>
 	</div>
 </div>
-<div class="emergency-switch">
-	<a href="#/view2" ng-click="switch_to_emergency()"> <img src="img/warning.png"/> Switch to Emergency Mode <img src="img/forward-arrow.png" class="forward"> </a>
+<div class="emergency-switch" ng-click="switch_to_emergency()">
+	<img src="img/warning.png" /> Switch to Emergency Mode <img src="img/forward-arrow.png" class="forward"  />
 </div>
 
 <div class="text-update" ng-repeat="message in messages" ng-show="message.message.length" style="{{message.final? '': 'background-color: rgba(129,183,26,.1)'}}">
@@ -26,11 +26,19 @@
 <div class="bottom-holder">
 	<div class="no-of-people-watching">
 		<img src="img/user.png" />
-		<div>3</div>
+		<div>{{users_count}}</div>
 	</div>
-	<div id="input-field">
-		<input type="text" text="fuck" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text"><button ng-click="global_text_save()">Complete Message</button>
-	</div>
+	<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control input-lg" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text" placeholder="">
+            <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" ng-click="global_text_save()" type="submit">Finish</button>
+      </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
 </div>
 
 
