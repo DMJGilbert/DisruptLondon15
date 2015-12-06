@@ -11,7 +11,9 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', function ($scope) {
 	$scope.messages = [];
+	$scope.helpers = [];
 	$scope.users_count = 0;
+	$scope.help_pop_up_hide=1;
     var inEmergencyMode = false;
 
 	$scope.global_text_change = function (text) {
@@ -60,6 +62,7 @@ angular.module('myApp.view2', ['ngRoute'])
     
 	socket.on('message', socket_received);
 	socket.on('users', users_connected);
+	socket.on('help', help_received);
 
 	function socket_received(obj) {
 		if(obj.emergency===1) {
@@ -72,6 +75,15 @@ angular.module('myApp.view2', ['ngRoute'])
 			}
 		}
 		
+	}
+
+	function help_received(obj) {
+
+		console.log(obj);
+		$scope.$apply(function () {
+			$scope.help_pop_up_hide = 0;
+			$scope.helpers.push(obj);
+		});
 	}
 
 	function users_connected(count) {

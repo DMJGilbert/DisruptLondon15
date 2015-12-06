@@ -53,6 +53,12 @@ function broadcast(obj) {
 	console.log(obj);
 	socket.emit('message',obj);
 }
+function broadcast_help(obj) {
+	obj.username = USERNAME!==null?USERNAME:TEMP_USERNAME;
+	console.log(obj);
+	obj.help = 1;
+	socket.emit('help',obj);
+}
 function message_received(obj) {
 	console.log(obj);
 }
