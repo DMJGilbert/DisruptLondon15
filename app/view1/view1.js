@@ -29,13 +29,14 @@ angular.module('myApp.view1', ['ngRoute'])
 	function socket_received(obj) {
 		if(obj.emergency===1) {
 			user_in_emergency(obj.username);
-		} else {
-			if (obj.final === 1) {
-				new_received(obj.message);
-			} else {
-				editable_received(obj.message);
-			}
 		}
+//		else {
+//			if (obj.final === 1) {
+//				new_received(obj.message);
+//			} else {
+//				editable_received(obj.message);
+//			}
+//		}
 	}
 
 	function user_in_emergency(username) {
