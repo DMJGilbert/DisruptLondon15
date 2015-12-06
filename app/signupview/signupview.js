@@ -11,7 +11,8 @@ angular.module('myApp.signupview', ['ngRoute'])
 
 .controller('SignUpCtrl', function ($scope, $location) {
 	$scope.counter = 0;
-	$scope.do_hackathon_mode = function () {
+	$scope.signup_name = "Send code"
+	$scope.do_hackathon_mode = function() {
 		$scope.login = "CrazyDude";
 		$scope.password = "*************";
 		$scope.phoneNumber = "+447955585777";
