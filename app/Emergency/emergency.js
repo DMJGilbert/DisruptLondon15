@@ -15,6 +15,7 @@ angular.module('myApp.emergency', ['ngRoute'])
     $("text").hide();
     $("#footer").hide();
     $("svg a.action").click(function(e){
+        return;
         e.preventDefault();
         maintitle = $(this).attr("title");
         var title= "You can provide: "+maintitle;
@@ -27,6 +28,7 @@ angular.module('myApp.emergency', ['ngRoute'])
     
     //contact
     $("#gocontact").click(function(e){
+        return;
          e.preventDefault();
         var title= 'Thank you for offering "'+maintitle+'"';
         $("#page-title").text(title);
@@ -36,6 +38,7 @@ angular.module('myApp.emergency', ['ngRoute'])
     });
 
     $scope.global_text_save = function(){
+        return;
         //TO DO POST THIS MESSAGE
         broadcast_help({text:$scope.text, maintitle:maintitle});
         $("#global_text").val();
