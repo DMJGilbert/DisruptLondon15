@@ -40,6 +40,7 @@ angular.module('myApp.view2', ['ngRoute'])
             document.getElementById("emergency-switch").innerHTML = htmlsnippet;
             
             broadcast({
+                message: $scope.text,
                 emergency: 1
             });
         } else {
