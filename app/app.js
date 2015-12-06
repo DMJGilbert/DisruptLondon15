@@ -65,7 +65,7 @@ app.run(function ($rootScope) {
 
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.otherwise({
-		redirectTo: '/signupview'
+		redirectTo: '/view1'
 	});
 }]);
 
