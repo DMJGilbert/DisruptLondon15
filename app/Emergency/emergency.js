@@ -9,7 +9,7 @@ angular.module('myApp.emergency', ['ngRoute'])
   });
 }])
 
-.controller('EmergencyCtrl', function($scope) {
+.controller('EmergencyCtrl', function($scope, $location) {
     var maintitle = "";
     $("text").hide();
     $("#footer").hide();
@@ -30,7 +30,13 @@ angular.module('myApp.emergency', ['ngRoute'])
         var title= 'Thank you for offering "'+maintitle+'"';
         $("#page-title").text(title);
         $("svg").hide();
-        $("#footer").show();      
+        $("#footer").show();   
+        $(".no-of-people-watching").hide();
     });
 
+    $scope.global_text_save = function(){
+        //TO DO POST THIS MESSAGE
+        $("#global_text").val();
+        $location.path("/");
+    }
 });
