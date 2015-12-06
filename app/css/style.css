@@ -30,7 +30,7 @@
 	background-color: #71A117;
 	color: #fff;
 	letter-spacing: 3px;
-	padding: 20px
+	padding: 10px
 }
 
 .live-textcast-header a {
@@ -40,7 +40,7 @@
 .live-textcast-subheader {
 	background-color: #81B71A;
 	letter-spacing: 2px;
-	padding: 20px;
+	padding: 15px;
 }
 
 .user-section {
@@ -59,7 +59,7 @@
 
 #username {
 	font-family: 'noto_sansbold';
-	margin: 10px 0 0 5px; 
+	margin: 5px 0 0 5px; 
 }
 
 .timestamp {
