@@ -190,8 +190,22 @@ div.broadcast {
 
 .bottom-holder {
 	background-image: url("../img/white-gradient.png");
-	/*background-color: #fff;*/7
+	/*background-color: #fff;*/
 	background-size: 100% 100%;
+}
+
+.emergency-switch {
+	background-color: #E6E6E6;
+	padding: 10px;
+}
+
+.emergency-switch a {
+	color: maroon;
+}
+
+.emergency-switch .forward {
+	float: right;
+	font-size: 8px;
 }
 
 
