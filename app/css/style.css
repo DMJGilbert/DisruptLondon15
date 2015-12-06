@@ -263,7 +263,7 @@ div.broadcast {
 .pop-up-row {
 	display: block;
 	border: thin solid #bbb;
-	height: 52px;
+	min-height: 52px;
 	margin-top: 10px;
 }
 
