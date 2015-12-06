@@ -8,6 +8,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		});
 }]).controller('SimpleMapCtrl', function ($scope) {
 		var esriMap;
+        var broadcaster = [];
         var longitude;
         var latitude;
         var lastMessage;
@@ -39,14 +40,17 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
         
         socket.on('message', socket_received);
         function socket_received(obj) {
-            longitude = obj.lon;
-            latitude = obj.lat;
-            lastMessage = obj.message;
+            // TODO push new broadcaster if they appear
+            if(!broadcaster.lenght) {
+                broadcaster.push(obj);
+            }
             generateDiv(esriMap, obj.lon, obj.lat, obj.message);
         }
 
 		function changeHandler(evt) {
-			generateDiv(esriMap, longitude, latitude, lastMessage);
+            broadcaster.forEach(function(obj) {
+                generateDiv(esriMap, obj.lon, obj.lat, obj.message);
+            });
 		}
 
     
@@ -62,7 +66,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
                     
 					document.getElementById("container").innerHTML = html;
-            $('#broadcasterCircle').show().arctext({radius: 15});
+                    $('#broadcasterCircle').show().arctext({radius: 15});
                 }
 
 		}
