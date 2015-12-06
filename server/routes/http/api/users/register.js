@@ -35,7 +35,7 @@ module.exports = function (app, io) {
 							client.messages.create({
 								to: '+447955585777',
 								from: '+441992351017',
-								body: 'Please verify your account via: http://10.11.21.203:3000/api/verfiy/' + _user.activationKey
+								body: 'Please verify your account via: http://ec2-52-31-164-82.eu-west-1.compute.amazonaws.com:3000/api/verfiy/' + _user.activationKey
 							}, function (err, responseData) {
 								console.log(err, responseData)
 							});

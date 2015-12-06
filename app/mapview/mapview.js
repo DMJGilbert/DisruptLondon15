@@ -63,7 +63,15 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var final_x = screenPoint.x + screen_point.x;
 					var final_y = screenPoint.y + screen_point.y;
 
-					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
+					
+					if(message.length<16) {
+						var number_of_symbols_to_add = 16-message.length;
+						for(var i=0;i<number_of_symbols_to_add;i++) {
+							message+=' ';
+						}
+					}
+
+					var html = '<a href="#/view1?broadcaster=Andriy"><h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3></a>';
                     
 					document.getElementById("container").innerHTML = html;
                     $('#broadcasterCircle').show().arctext({radius: 15});
