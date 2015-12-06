@@ -5,11 +5,12 @@ module.exports = function (app, io) {
 	app.route('/api/register').get(function (req, res) {
 		var data = req.query
 		users.findOne({
-			$or: [{
-				username: new RegExp('^' + data.username + '$', 'i'),
-			}, {
-				phoneNumber: data.phoneNumber
-			}],
+			$or:{
+				username: new RegExp('^' + data.username + '$', 'i')
+			},
+//			 {
+//				phoneNumber: data.phoneNumber
+//			}],
 			provider: 'local'
 		}, function (err, user) {
 			if (err) {
