@@ -27,6 +27,12 @@ angular.module('myApp.view2', ['ngRoute'])
         $("#global_text").focus();
 	};
 
+    $scope.switch_to_emergency = function () {
+		console.log("emergency");
+        var d = document.getElementById("live-textcast-subheader");
+        d.className = d.className + " super-red";
+	};
+    
 	socket.on('message', socket_received);
 	socket.on('users', users_connected);
 
@@ -76,4 +82,5 @@ angular.module('myApp.view2', ['ngRoute'])
 		var d = new Date();
 		return (d.getHours()<10?'0'+d.getHours():d.getHours())+':'+ ( d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes() )+':'+ (d.getSeconds()<10?'0'+d.getSeconds():d.getSeconds() )+ '  (' + d.getMilliseconds() + ' milliseconds )';
 	}
+    
 });
