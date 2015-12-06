@@ -15,8 +15,10 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	$scope.global_text_change = function (text) {
 		var object = {
-			message: $scope.text
+			message: $scope.text,
+			username: USERNAME!==null?USERNAME:TEMP_USERNAME
 		};
+		console.log(object);
 		broadcast(object);
 	};
 	$scope.global_text_save = function () {
