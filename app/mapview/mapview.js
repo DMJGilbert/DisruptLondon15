@@ -59,8 +59,10 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 
 					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> copper box arena</h3>';
                     
-					document.getElementById("container").innerHTML = html;
-            $('#broadcasterCircle').show().arctext({radius: 15});
+					if(document.getElementById("container")){
+						document.getElementById("container").innerHTML = html;
+            			$('#broadcasterCircle').show().arctext({radius: 15});
+					}
                 }
 
 		}
