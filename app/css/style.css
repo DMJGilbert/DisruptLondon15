@@ -82,7 +82,7 @@
 }
 
 #input-field input{
-	width: 215px;
+	width: 212px;
 }
 
 .no-of-people-watching {
@@ -139,6 +139,11 @@ div.broadcast {
 
 .roundText {
 	font-size: 10px;
+	font-family: 'Consolas';
+}
+
+.roundText span {
+	font-family: 'Consolas';
 }
 
 .roundText:after {
@@ -148,8 +153,8 @@ div.broadcast {
     height: 55px;
     border-radius: 50%;
     position: absolute;
-    top: 19px;
-    left: 15px;
+    top: 25px;
+    left: 19px;
     content: '';
     text-transform: none;
     font-weight: 800;
@@ -158,12 +163,12 @@ div.broadcast {
 .roundText:before {
     color: #F5E9BC;
     background-color: rgba(0, 113, 188, 0.4);
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border-radius: 50%;
     position: absolute;
-    left: -7px;
-    top: -3px;
+    left: -6px;
+    top: -0px;
     content: '';
     text-transform: none;
     font-weight: 800;
