@@ -10,6 +10,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		var esriMap;
         var longitude;
         var latitude;
+        var lastMessage;
 
 
 		$scope.map = {
@@ -40,15 +41,16 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
         function socket_received(obj) {
             longitude = obj.lon;
             latitude = obj.lat;
-            generateDiv(esriMap, obj.lon, obj.lat);
+            lastMessage = obj.message;
+            generateDiv(esriMap, obj.lon, obj.lat, obj.message);
         }
 
 		function changeHandler(evt) {
-			generateDiv(esriMap, longitude, latitude);
+			generateDiv(esriMap, longitude, latitude, lastMessage);
 		}
 
     
-    		function generateDiv(map, lon, lat) {
+    		function generateDiv(map, lon, lat, message) {
                 if(lon){
 					var point = new esri.geometry.Point(lon, lat);
 					var screenPoint = map.toScreen(point);
@@ -57,7 +59,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var final_x = screenPoint.x + screen_point.x;
 					var final_y = screenPoint.y + screen_point.y;
 
-					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> copper box arena</h3>';
+					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
                     
 					document.getElementById("container").innerHTML = html;
             $('#broadcasterCircle').show().arctext({radius: 15});
