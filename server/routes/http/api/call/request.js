@@ -12,7 +12,10 @@ module.exports = function (app, io) {
 			console.log(err);
 			//executed when the call has been initiated.
 			console.log(responseData); // outputs "+14506667788"
-
 		});
+		res.send(200, {
+			'message': 'success'
+		})
+
 	});
 };

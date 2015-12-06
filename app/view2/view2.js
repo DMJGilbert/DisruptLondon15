@@ -13,8 +13,8 @@ angular.module('myApp.view2', ['ngRoute'])
 	$scope.messages = [];
 	$scope.helpers = [];
 	$scope.users_count = 0;
-	$scope.help_pop_up_hide=1;
-    var inEmergencyMode = false;
+	$scope.help_pop_up_hide = 1;
+	var inEmergencyMode = false;
 
 	$scope.global_text_change = function (text) {
 		var object = {
@@ -27,46 +27,59 @@ angular.module('myApp.view2', ['ngRoute'])
 			final: 1
 		});
 		$scope.text = "";
-        $("#global_text").focus();
+		$("#global_text").focus();
 	};
 
-    $scope.switch_to_emergency = function () {
-        if(!inEmergencyMode) {
-            inEmergencyMode = true;
-            console.log("emergency");
-            var d = document.getElementById("live-textcast-subheader");
-            d.className = "live-textcast-subheader super-red";
-            var dd = document.getElementById("live-textcast-header");
-            dd.className = "live-textcast-header super-dark-red";
-            var htmlsnippet = "Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
-            document.getElementById("emergency-switch").innerHTML = htmlsnippet;
-            
-            broadcast({
-                message: $scope.text,
-                emergency: 1
-            });
-        } else {
-            inEmergencyMode = false;
-            var d = document.getElementById("live-textcast-subheader");
-            d.className = "live-textcast-subheader  ng-scope";
-            var dd = document.getElementById("live-textcast-header");
-            dd.className = "live-textcast-header  ng-scope";
-            var htmlsnippet = "<img src=\"img/warning.png\" /> Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
-            document.getElementById("emergency-switch").innerHTML = htmlsnippet;
-        }
+	$scope.requestCall = function () {
+		$.ajax({
+			type: "GET",
+			url: "/api/call",
+			data: {},
+			cache: false,
+			success: function (data) {
+				if (callback)
+					callback(data);
+			}
+		});
+	}
+
+	$scope.switch_to_emergency = function () {
+		if (!inEmergencyMode) {
+			inEmergencyMode = true;
+			console.log("emergency");
+			var d = document.getElementById("live-textcast-subheader");
+			d.className = "live-textcast-subheader super-red";
+			var dd = document.getElementById("live-textcast-header");
+			dd.className = "live-textcast-header super-dark-red";
+			var htmlsnippet = "Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
+			document.getElementById("emergency-switch").innerHTML = htmlsnippet;
+
+			broadcast({
+				message: $scope.text,
+				emergency: 1
+			});
+		} else {
+			inEmergencyMode = false;
+			var d = document.getElementById("live-textcast-subheader");
+			d.className = "live-textcast-subheader  ng-scope";
+			var dd = document.getElementById("live-textcast-header");
+			dd.className = "live-textcast-header  ng-scope";
+			var htmlsnippet = "<img src=\"img/warning.png\" /> Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
+			document.getElementById("emergency-switch").innerHTML = htmlsnippet;
+		}
 	};
 
-	$scope.get_help_button = function() {
+	$scope.get_help_button = function () {
 		alert("get help");
 	}
-    
+
 	socket.on('message', socket_received);
 	socket.on('users', users_connected);
 	socket.on('help', help_received);
 
 	function socket_received(obj) {
-		if(obj.emergency===1) {
-			
+		if (obj.emergency === 1) {
+
 		} else {
 			if (obj.final === 1) {
 				new_received(obj.message);
@@ -74,7 +87,7 @@ angular.module('myApp.view2', ['ngRoute'])
 				editable_received(obj.message);
 			}
 		}
-		
+
 	}
 
 	function help_received(obj) {
@@ -122,7 +135,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	function currentDate() {
 		var d = new Date();
-		return (d.getHours()<10?'0'+d.getHours():d.getHours())+':'+ ( d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes() )+':'+ (d.getSeconds()<10?'0'+d.getSeconds():d.getSeconds() )+ '  (' + d.getMilliseconds() + ' milliseconds )';
+		return (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ':' + (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes()) + ':' + (d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds()) + '  (' + d.getMilliseconds() + ' milliseconds )';
 	}
-    
+
 });
