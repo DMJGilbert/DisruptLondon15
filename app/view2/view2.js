@@ -11,6 +11,8 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', function($scope) {
 	$scope.messages = [];
+	$scope.users_count= 0;
+
 	$scope.global_text_change = function(text) {
 		var object = {message:$scope.text};
 		broadcast(object);
@@ -21,6 +23,8 @@ angular.module('myApp.view2', ['ngRoute'])
 	};
 
 	socket.on('message', socket_received);
+	socket.on('users', users_connected);
+
 	function socket_received(obj) {
 		if(obj.final===1) {
 			new_received(obj.message);
@@ -28,6 +32,11 @@ angular.module('myApp.view2', ['ngRoute'])
 		else {
 			editable_received(obj.message);
 		}
+	}
+	function users_connected(count) {
+		$scope.$apply(function() {
+			$scope.users_count = count;
+		});
 	}
 	function new_received(text) {
 		$scope.$apply(function() {

@@ -63,13 +63,21 @@ config.getGlobbedFiles('./server/routes/http/**/*.js').forEach(function (routePa
 });
 
 io.on('connect', function (socket) {
-	io.emit('users',io.sockets.sockets.length);
+
+	socket.on('disconnect', function(socket) {
+		io.emit('users',io.sockets.sockets.length);
+	});
+	setTimeout(function() {
+		io.emit('users',io.sockets.sockets.length);
+	},1000);
+
 	config.getGlobbedFiles('./server/routes/ws/**/*.js').forEach(function (routePath) {
 		try {
 			require(path.resolve(routePath))(app, io, socket);
 		} catch (e) {}
 	});
 })
+
 
 app.all('/*', function (req, res, next) {
 	res.sendFile('index.html', {
