@@ -11,7 +11,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', function($scope,$location, $rootScope) {
 	$scope.hide_i_can_help=1;
-    $scope.users_count = 0;
+    $scope.users_count = 1;
     var help_user = null;
     
 	$scope.global_text_change = function(text) {
