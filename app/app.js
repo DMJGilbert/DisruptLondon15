@@ -6,7 +6,8 @@ var app = angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.mapview',
-  'myApp.loginview'
+  'myApp.loginview',
+  'myApp.signupview'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

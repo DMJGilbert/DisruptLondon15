@@ -44,7 +44,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		else 
 		{
 			$scope.$apply(function() {
-				$scope.messages[0].message = text;
+				$scope.messages[0].message = emoji.replace_colons(text);
 				$scope.messages[0].time = currentDate();
 					
 			})
