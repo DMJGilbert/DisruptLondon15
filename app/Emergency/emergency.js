@@ -1,22 +1,16 @@
 'use strict';
 
 
-var hasBeenEx = false;
-
-
 angular.module('myApp.emergency', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/emergency', {
     templateUrl: 'emergency/emergency.html',
     controller: 'EmergencyCtrl'
-  });
+  }).otherwise({redirectTo:"/"});
 }])
 
 .controller('EmergencyCtrl', function($scope, $location) {
-    if(hasBeenEx)
-        return;
-    hasBeenEx = true;
     var maintitle = "";
     $("text").hide();
     $("#footer").hide();
