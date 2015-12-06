@@ -49,6 +49,8 @@ function broadcast(obj) {
 		obj.lat = latitude;
 	if(longitude!==0)
 		obj.lon = longitude;
+	obj.username = USERNAME!==null?USERNAME:TEMP_USERNAME;
+	console.log(obj);
 	socket.emit('message',obj);
 }
 function message_received(obj) {

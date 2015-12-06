@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', function($scope) {
+.controller('View1Ctrl', function($scope,$location) {
     $scope.messages = [];
     $scope.users_count = 0;
     
@@ -26,12 +26,21 @@ angular.module('myApp.view1', ['ngRoute'])
     socket.on('users', users_connected);
     
 	function socket_received(obj) {
-		if(obj.final===1) {
-			new_received(obj.message);
-		}	
-		else {
-			editable_received(obj.message);
+		if(obj.emergency===1) {
+			user_in_emergency(obj.username);
+		} else {
+			if (obj.final === 1) {
+				new_received(obj.message);
+			} else {
+				editable_received(obj.message);
+			}
 		}
+	}
+
+	function user_in_emergency(username) {
+		$scope.$apply(function() {
+			$location.path("/emergency");
+		})
 	}
     
     function users_connected(count) {

@@ -15,10 +15,8 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	$scope.global_text_change = function (text) {
 		var object = {
-			message: $scope.text,
-			username: USERNAME!==null?USERNAME:TEMP_USERNAME
+			message: $scope.text
 		};
-		console.log(object);
 		broadcast(object);
 	};
 	$scope.global_text_save = function () {
@@ -33,17 +31,25 @@ angular.module('myApp.view2', ['ngRoute'])
 		console.log("emergency");
         var d = document.getElementById("live-textcast-subheader");
         d.className = "live-textcast-subheader super-red";
+        broadcast({
+			emergency: 1
+		});
 	};
     
 	socket.on('message', socket_received);
 	socket.on('users', users_connected);
 
 	function socket_received(obj) {
-		if (obj.final === 1) {
-			new_received(obj.message);
+		if(obj.emergency===1) {
+			
 		} else {
-			editable_received(obj.message);
+			if (obj.final === 1) {
+				new_received(obj.message);
+			} else {
+				editable_received(obj.message);
+			}
 		}
+		
 	}
 
 	function users_connected(count) {
