@@ -9,9 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', function($scope,$location) {
+.controller('View1Ctrl', function($scope,$location, $rootScope) {
 	$scope.hide_i_can_help=1;
-    $scope.messages = [];
     $scope.users_count = 0;
     var help_user = null;
     
@@ -58,21 +57,21 @@ angular.module('myApp.view1', ['ngRoute'])
     
 	function new_received(text) {
 		$scope.$apply(function() {
-			$scope.messages.unshift({message:text, time: currentDate()});
-			if($scope.messages.length>1) {
-				$scope.messages[1].final = 1;
+			$rootScope.messages.unshift({message:text, time: currentDate()});
+			if($rootScope.messages.length>1) {
+				$rootScope.messages[1].final = 1;
 			}
 		})
 	}
 	function editable_received(text) {
-		if($scope.messages.length==0) {
+		if($rootScope.messages.length==0) {
 			new_received(text);
 		}
 		else 
 		{
 			$scope.$apply(function() {
-				$scope.messages[0].message = emoji.replace_colons(text);
-				$scope.messages[0].time = currentDate();
+				$rootScope.messages[0].message = emoji.replace_colons(text);
+				$rootScope.messages[0].time = currentDate();
 					
 			})
 		}

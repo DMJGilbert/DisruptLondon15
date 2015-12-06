@@ -11,6 +11,11 @@ var app = angular.module('myApp', [
   'myApp.emergency'
 ]);
 
+app.run(function ($rootScope) {
+	$rootScope.messages = [];
+	$rootScope.broadcaster = {};
+})
+
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.otherwise({
 		redirectTo: '/view1'
@@ -19,17 +24,17 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 
 app.directive('ngEnter', function () {
-    return function (scope, element, attrs) {
-        element.bind("keydown keypress", function (event) {
-            if (event.which === 13) {
-                scope.$apply(function () {
-                    scope.$eval(attrs.ngEnter, {
-                        'event': event
-                    });
-                });
+	return function (scope, element, attrs) {
+		element.bind("keydown keypress", function (event) {
+			if (event.which === 13) {
+				scope.$apply(function () {
+					scope.$eval(attrs.ngEnter, {
+						'event': event
+					});
+				});
 
-                event.preventDefault();
-            }
-        });
-    };
+				event.preventDefault();
+			}
+		});
+	};
 });
