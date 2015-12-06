@@ -10,8 +10,10 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', function($scope,$location) {
+	$scope.hide_i_can_help=1;
     $scope.messages = [];
     $scope.users_count = 0;
+    var help_user = null;
     
 	$scope.global_text_change = function(text) {
 		var object = {message:$scope.text};
@@ -38,6 +40,15 @@ angular.module('myApp.view1', ['ngRoute'])
 	}
 
 	function user_in_emergency(username) {
+		$scope.$apply(function() {
+			$scope.hide_i_can_help = 0;
+		})
+		
+		help_user = username;
+	}
+
+	function switch_to_help_mode() {
+		alert('will help user' + help_user);
 		$scope.$apply(function() {
 			$location.path("/emergency");
 		})
