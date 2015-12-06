@@ -52,6 +52,6 @@ angular.module('myApp.view1', ['ngRoute'])
 	}
 	function currentDate() {
 		var d = new Date();
-		return d.getHours()+':'+d.getMinutes() +':'+ d.getSeconds() + '  (' + d.getMilliseconds() + ' milliseconds )';;
+		return (d.getHours()<10?'0'+d.getHours():d.getHours())+':'+ ( d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes() )+':'+ (d.getSeconds()<10?'0'+d.getSeconds():d.getSeconds() )+ '  (' + d.getMilliseconds() + ' milliseconds )';
 	}
 });
