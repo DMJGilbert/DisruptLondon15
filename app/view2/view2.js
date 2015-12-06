@@ -52,6 +52,10 @@ angular.module('myApp.view2', ['ngRoute'])
             document.getElementById("emergency-switch").innerHTML = htmlsnippet;
         }
 	};
+
+	$scope.get_help_button = function() {
+		alert("get help");
+	}
     
 	socket.on('message', socket_received);
 	socket.on('users', users_connected);

@@ -40,6 +40,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
         
         socket.on('message', socket_received);
         function socket_received(obj) {
+        	if(obj.final===1) return;
             broadcaster[obj.username] = obj;
             // rest content
             document.getElementById("container").innerHTML = "";
