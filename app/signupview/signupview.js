@@ -10,5 +10,7 @@ angular.module('myApp.signupview', ['ngRoute'])
 }])
 
 .controller('SignUpCtrl', function($scope) {
-    
+    $scope.do_registration = function() {
+    	register_with_twilio($scope.login,$scope.phoneNumber,$scope.password);
+    };
 });
