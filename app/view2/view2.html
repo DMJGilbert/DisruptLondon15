@@ -43,21 +43,15 @@
     <!-- /.col-lg-6 -->
 </div>
 
-<div class="help-pop-up" style="display:none;">
+<div class="help-pop-up" ng-hide="help_pop_up_hide==1">
 	<div class="pop-up-body">
 		<img src="img/close.png" />
 		<h3> Offers for Help </h3>
 
 		<!-- Item 1 -->
-		<div class="pop-up-row">
+		<div class="pop-up-row" ng-repeat="help in helpers">
 			<img src="img/phone.png" class="phone"/>
-			<p> Offer for Shelter from Eleanor Harding <p> 
-		</div>
-
-		<!-- Item 2 -->
-		<div class="pop-up-row">
-			<img src="img/phone.png" class="phone"/>
-			<p> Offer for Physical Help from Florent Grandjean <p> 
+			<p> Offer for {{help.maintitle}} from {{help.username}} <p> 
 		</div>
 
 	</div>
