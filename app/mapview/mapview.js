@@ -63,6 +63,14 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var final_x = screenPoint.x + screen_point.x;
 					var final_y = screenPoint.y + screen_point.y;
 
+					
+					if(message.length<16) {
+						var number_of_symbols_to_add = 16-message.length;
+						for(var i=0;i<number_of_symbols_to_add;i++) {
+							message+=' ';
+						}
+					}
+
 					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
                     
 					document.getElementById("container").innerHTML = html;
