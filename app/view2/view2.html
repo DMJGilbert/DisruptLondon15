@@ -26,11 +26,19 @@
 <div class="bottom-holder">
 	<div class="no-of-people-watching">
 		<img src="img/user.png" />
-		<div>3</div>
+		<div>{{users_count}}</div>
 	</div>
-	<div id="input-field">
-		<input type="text" text="fuck" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text"><button ng-click="global_text_save()">Complete Message</button>
-	</div>
+	<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control input-lg" id="global_text" ng-change="global_text_change()" ng-enter="global_text_save()" ng-model="text" placeholder="">
+            <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" ng-click="global_text_save()" type="submit">Finish</button>
+      </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
 </div>
 
 
