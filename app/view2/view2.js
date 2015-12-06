@@ -31,6 +31,9 @@ angular.module('myApp.view2', ['ngRoute'])
 		console.log("emergency");
         var d = document.getElementById("live-textcast-subheader");
         d.className = "live-textcast-subheader super-red";
+        var dd = document.getElementById("live-textcast-header");
+        dd.className = "live-textcast-header super-dark-red";
+        
         broadcast({
 			emergency: 1
 		});
