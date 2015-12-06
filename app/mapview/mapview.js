@@ -41,13 +41,15 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
         socket.on('message', socket_received);
         function socket_received(obj) {
         	if(obj.final===1) return;
-            broadcaster[obj.username] = obj;
-            // rest content
-            document.getElementById("container").innerHTML = "";
-            // add content
-            for (var key in broadcaster) {
-                var obj = broadcaster[key];
-                generateDiv(esriMap, obj.lon, obj.lat, obj.message, obj.username);
+            if(document.getElementById("container")) {
+                broadcaster[obj.username] = obj;
+                // rest content
+                document.getElementById("container").innerHTML = "";
+                // add content
+                for (var key in broadcaster) {
+                    var obj = broadcaster[key];
+                    generateDiv(esriMap, obj.lon, obj.lat, obj.message, obj.username);
+                }
             }
         }
 
