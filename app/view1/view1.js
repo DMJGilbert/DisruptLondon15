@@ -42,7 +42,13 @@ angular.module('myApp.view1', ['ngRoute'])
 	function user_in_emergency(username) {
 		$scope.$apply(function() {
 			$scope.hide_i_can_help = 0;
-		})
+		
+            var d = document.getElementById("live-textcast-subheader");
+            d.className = "live-textcast-subheader super-red";
+            var dd = document.getElementById("live-textcast-header");
+            dd.className = "live-textcast-header super-dark-red";
+        
+        })
 		
 		help_user = username;
 	}
