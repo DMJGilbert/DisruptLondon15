@@ -12,7 +12,7 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', function ($scope) {
 	$scope.messages = [];
 	$scope.helpers = [];
-	$scope.users_count = 0;
+	$scope.users_count = 1;
 	$scope.help_pop_up_hide = 1;
 	var inEmergencyMode = false;
 
