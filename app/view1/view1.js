@@ -46,8 +46,11 @@ angular.module('myApp.view1', ['ngRoute'])
 		
 		help_user = username;
 	}
-
+	var hasBeenExecuted = false;
 	function switch_to_help_mode() {
+		if(hasBeenExecuted)
+			return;
+		hasBeenExecuted = true;
 		alert('will help user' + help_user);
 		$scope.$apply(function() {
 			$location.path("/emergency");

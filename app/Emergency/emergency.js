@@ -38,6 +38,6 @@ angular.module('myApp.emergency', ['ngRoute'])
         //TO DO POST THIS MESSAGE
         broadcast_help({text:$scope.text, maintitle:maintitle});
         $("#global_text").val();
-        //$location.path("/");
+        $location.path("/");
     }
 });
