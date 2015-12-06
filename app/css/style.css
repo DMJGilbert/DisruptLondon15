@@ -74,13 +74,7 @@
 	bottom: 0px;
 	padding: 10px;
 	width: 100%;
-	padding-top: 20px;
-}
-
-.bottom-holder:before {
-	content: '';
-	background-image: url('../img/white-gradient.png');
-	height: 100px;
+	padding-top: 80px;
 }
 
 .bottom-holder {
@@ -178,11 +172,21 @@ div.broadcast {
 
 .login-input {
 	display: block;
+	margin: 15px auto;
+	padding: 10px;
+	width: 300px;
+}
+
+.login-holder {
+	background-color: #91C129;
+	padding: 20px;
+	text-align: center;
 }
 
 .bottom-holder {
-	/*background-image: url("../img/white-gradient.png");*/
-	background-color: #fff;
+	background-image: url("../img/white-gradient.png");
+	/*background-color: #fff;*/7
+	background-size: 100% 100%;
 }
 
 
