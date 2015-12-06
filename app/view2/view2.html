@@ -45,13 +45,13 @@
 
 <div class="help-pop-up" ng-hide="help_pop_up_hide==1">
 	<div class="pop-up-body">
-		<img src="img/close.png" />
+		<img src="img/close.png" ng-click="close()" />
 		<h3> Offers for Help </h3>
 
 		<!-- Item 1 -->
 		<div class="pop-up-row" ng-repeat="help in helpers">
 			<a href="tel://+447955585777"><img src="img/phone.png" class="phone"/></a>
-			<p> Offer for {{help.maintitle}} from {{help.username}} <p> 
+			<p> Offer for {{help.maintitle}} [ {{help.text}}] from {{help.username}} <p> 
 		</div>
 
 	</div>

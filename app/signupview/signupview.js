@@ -34,6 +34,6 @@ angular.module('myApp.signupview', ['ngRoute'])
 			$scope.do_signup();
 	};
 	$scope.do_signup = function () {
-		$location.path("/");
+		$location.path("mapview");
 	}
 });

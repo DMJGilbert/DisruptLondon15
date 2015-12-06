@@ -99,6 +99,10 @@ angular.module('myApp.view2', ['ngRoute'])
 		});
 	}
 
+    $scope.close = function(){
+        $scope.help_pop_up_hide = 1;
+    };
+    
 	function users_connected(count) {
 		$scope.$apply(function () {
 			$scope.users_count = count;
