@@ -71,7 +71,7 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 						}
 					}
 
-					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
+					var html = '<a href="#/view1?broadcaster=Andriy"><h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3></a>';
                     
 					document.getElementById("container").innerHTML = html;
                     $('#broadcasterCircle').show().arctext({radius: 15});
