@@ -4,13 +4,9 @@ var client = require('twilio')("AC699ee47ad1524d0ae55ad31144028aa7", "2cfbe8bd99
 module.exports = function (app, io) {
 	app.route('/api/register').get(function (req, res) {
 		var data = req.query
+		console.log('User', data)
 		users.findOne({
-			$or:{
-				username: new RegExp('^' + data.username + '$', 'i')
-			},
-//			 {
-//				phoneNumber: data.phoneNumber
-//			}],
+			username: new RegExp('^' + data.username + '$', 'i'),
 			provider: 'local'
 		}, function (err, user) {
 			if (err) {
@@ -20,8 +16,9 @@ module.exports = function (app, io) {
 			} else if (!user) {
 				data.provider = "local";
 				var newUser = new users(data);
+				console.log(newUser)
 				newUser.save(function (err, _user) {
-					console.log(err)
+					console.log(err, _user)
 					if (_user) {
 						_user.salt = undefined;
 						_user.password = undefined;
@@ -50,6 +47,7 @@ module.exports = function (app, io) {
 					}
 				});
 			} else {
+				console.log(err, user)
 				res.send(400, {
 					message: 'Failed (User already exists)'
 				})

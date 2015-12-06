@@ -26,6 +26,7 @@ angular.module('myApp.view2', ['ngRoute'])
 			final: 1
 		});
 		$scope.text = "";
+        $("#global_text").focus();
 	};
 
 	socket.on('message', socket_received);
