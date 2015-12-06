@@ -32,7 +32,6 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 			//generateDiv(map);
 
 			map.on('extent-change', changeHandler);
-			initCircles();
 
 			//var graphic = esri.Graphic(point, text);
 			//map.graphics.add(graphic)
