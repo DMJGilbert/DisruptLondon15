@@ -6,6 +6,7 @@
 
 <div class="live-textcast-subheader " id="live-textcast-subheader">
 	<div class="user-section">
+
 		<img src="img/andriy.png" />
 		<p id="username"> Andriy Marin </p>
 		<p> <img src="img/location-arrow.png"/> London, UK </p>
@@ -24,6 +25,7 @@
 </div>
 
 <div class="bottom-holder">
+
 	<div class="no-of-people-watching">
 		<img src="img/user.png" />
 		<div>{{users_count}}</div>
@@ -36,6 +38,9 @@
             <span class="input-group-btn">
         <button class="btn btn-primary btn-lg" ng-click="global_text_save()" type="submit">Finish</button>
       </span>
+
+      <button class="mic btn btn-default btn-lg" ng-click="requestCall()" ><span class="glyphicon glyphicon-earphone"></span></button>
+      <!-- <img  src="img/mic.png"/> -->
         </div>
         <!-- /input-group -->
     </div>

@@ -250,6 +250,12 @@ div.broadcast {
     max-width: 400px;
 }
 
+.mic {
+	float: right;
+	padding: 10px;
+	margin-left: 5px;
+}
+
 .phone {
 	float: right;
 }
