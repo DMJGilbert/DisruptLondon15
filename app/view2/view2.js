@@ -12,6 +12,7 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', function ($scope) {
 	$scope.messages = [];
 	$scope.users_count = 0;
+    var inEmergencyMode = false;
 
 	$scope.global_text_change = function (text) {
 		var object = {
@@ -28,15 +29,28 @@ angular.module('myApp.view2', ['ngRoute'])
 	};
 
     $scope.switch_to_emergency = function () {
-		console.log("emergency");
-        var d = document.getElementById("live-textcast-subheader");
-        d.className = "live-textcast-subheader super-red";
-        var dd = document.getElementById("live-textcast-header");
-        dd.className = "live-textcast-header super-dark-red";
-        
-        broadcast({
-			emergency: 1
-		});
+        if(!inEmergencyMode) {
+            inEmergencyMode = true;
+            console.log("emergency");
+            var d = document.getElementById("live-textcast-subheader");
+            d.className = "live-textcast-subheader super-red";
+            var dd = document.getElementById("live-textcast-header");
+            dd.className = "live-textcast-header super-dark-red";
+            var htmlsnippet = "Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
+            document.getElementById("emergency-switch").innerHTML = htmlsnippet;
+            
+            broadcast({
+                emergency: 1
+            });
+        } else {
+            inEmergencyMode = false;
+            var d = document.getElementById("live-textcast-subheader");
+            d.className = "live-textcast-subheader  ng-scope";
+            var dd = document.getElementById("live-textcast-header");
+            dd.className = "live-textcast-header  ng-scope";
+            var htmlsnippet = "<img src=\"img/warning.png\" /> Switch to Standard Mode <img src=\"img/forward-arrow.png\" class=\"forward\"/>"
+            document.getElementById("emergency-switch").innerHTML = htmlsnippet;
+        }
 	};
 
 	$scope.get_help_button = function() {
