@@ -10,7 +10,7 @@ angular.module('myApp.signupview', ['ngRoute'])
 }])
 
 .controller('SignUpCtrl', function($scope, $location) {
-	
+	$scope.counter = 0;
 	$scope.do_hackathon_mode = function() {
 		$scope.login = "CrazyDude";
 		$scope.password = "*************";
@@ -19,11 +19,24 @@ angular.module('myApp.signupview', ['ngRoute'])
 	};
 	
     $scope.do_registration = function() {
-    	register_with_twilio($scope.login,$scope.phoneNumber,$scope.password, function() {
-    		USERNAME = $scope.login;
+    	if($scope.counter==0) {
+    		$scope.signup_name = "Signup"
+    		register_with_twilio($scope.login,$scope.phoneNumber,$scope.password, function() {
+    			USERNAME = $scope.login;
+    		});
+    		setTimeout(function() {
+    			$scope.$apply(function (){
+    				$scope.counter++;
+    			});
+    		},3000);
+    	}
+    	else
+    		$scope.do_signup();
+    };
+    $scope.do_signup = function() {
+    		alert("signup");
     		$scope.$apply(function (){
 				$location.path("/");
 			})
-    	});
-    };
+    }
 });
