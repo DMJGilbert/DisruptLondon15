@@ -77,6 +77,10 @@ svg a:focus g path {
     fill: #891010;
 }
 
+.help-him svg a.active path,svg a.active g path {
+    fill: #891010;
+}
+
 .help-him svg a g path {
     fill: #fff;
 }

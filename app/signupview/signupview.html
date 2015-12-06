@@ -2,6 +2,6 @@
 	<input type="text" ng-model="login" class="form-control login-input" placeholder="Username" text="CrazyDude">
 	<input type="text" ng-model="phoneNumber" class="form-control login-input" placeholder="Phone number" text="+447955585777">
 	<input type="password" ng-model="password" class="form-control login-input" placeholder="Password" text="**********">
-	<input type="text" ng-model="actCode" class="form-control login-input" placeholder="ActviationCode" text="3951">
-	<button class="btn btn-primary" ng-click="do_hackathon_mode()">HackathonMode</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" ng-click="do_registration()">Signup</button>
+	<input type="text" ng-model="actCode" class="form-control login-input" placeholder="ActviationCode" text="3951" ng-hide="counter==0">
+	<button class="btn btn-primary" ng-click="do_hackathon_mode()">HackathonMode</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" ng-click="do_registration()" ng-model="signup_name">Send code</button>
 </div>
