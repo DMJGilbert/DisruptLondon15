@@ -1,5 +1,9 @@
 'use strict';
 
+
+var hasBeenEx = false;
+
+
 angular.module('myApp.emergency', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -10,6 +14,9 @@ angular.module('myApp.emergency', ['ngRoute'])
 }])
 
 .controller('EmergencyCtrl', function($scope, $location) {
+    if(hasBeenEx)
+        return;
+    hasBeenEx = true;
     var maintitle = "";
     $("text").hide();
     $("#footer").hide();
@@ -38,6 +45,6 @@ angular.module('myApp.emergency', ['ngRoute'])
         //TO DO POST THIS MESSAGE
         broadcast_help({text:$scope.text, maintitle:maintitle});
         $("#global_text").val();
-        $location.path("/");
+       // $location.path("/");
     }
 });
