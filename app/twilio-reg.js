@@ -12,7 +12,7 @@ function init() {
 }
 init();
 
-function register_with_twilio(username, password, phoneNumber) {
+function register_with_twilio(username, password, phoneNumber, callback) {
 	
 	$.ajax({
 	  type: "GET",
@@ -20,7 +20,8 @@ function register_with_twilio(username, password, phoneNumber) {
 	  data: {username:username,password:password,phoneNumber:phoneNumber},
 	  cache: false,
 	  success: function(data){
-	     alert(data);
+	     if(callback)
+	     	callback(data);
 	  }
 	});
 }
