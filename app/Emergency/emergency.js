@@ -5,9 +5,9 @@ angular.module('myApp.emergency', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/emergency', {
-    templateUrl: 'emergency/emergency.html',
+    templateUrl: 'Emergency/emergency.html',
     controller: 'EmergencyCtrl'
-  }).otherwise({redirectTo:"/"});
+  })
 }])
 
 .controller('EmergencyCtrl', function($scope, $location) {
