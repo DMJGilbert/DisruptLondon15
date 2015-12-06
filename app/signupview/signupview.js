@@ -14,7 +14,9 @@ angular.module('myApp.signupview', ['ngRoute'])
     		
     	register_with_twilio($scope.login,$scope.phoneNumber,$scope.password, function() {
     		USERNAME = $scope.login;
-    		$location.path("/#/view2");
+    		$scope.$apply(function (){
+				$location.path("/");
+			})
     	});
     };
 });
