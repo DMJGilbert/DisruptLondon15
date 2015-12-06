@@ -10,11 +10,13 @@ angular.module('myApp.emergency', ['ngRoute'])
 }])
 
 .controller('EmergencyCtrl', function($scope) {
+    var maintitle = "";
     $("text").hide();
     $("#footer").hide();
     $("svg a.action").click(function(e){
         e.preventDefault();
-        var title= "You can provide: "+$(this).attr("title");
+        maintitle = $(this).attr("title");
+        var title= "You can provide: "+maintitle;
         $("#page-title").text(title);
         $(this).toggleClass("active");
         $("text").show();
@@ -25,6 +27,8 @@ angular.module('myApp.emergency', ['ngRoute'])
     //contact
     $("#gocontact").click(function(e){
          e.preventDefault();
+        var title= 'Thank you for offering "'+maintitle+'"';
+        $("#page-title").text(title);
         $("svg").hide();
         $("#footer").show();      
     });
