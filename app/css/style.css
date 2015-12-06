@@ -216,6 +216,17 @@ div.broadcast {
 	background-color: #B71C1C;
 }
 
+.emergency-help-button {
+	border-radius: 3px;
+    background-color: #891010;
+    letter-spacing: 3px;
+    color: #fff;
+    padding: 7px 70px;
+    float: right;
+    margin-top: -5px;
+    /*display: none;*/
+}
+
 	 #warped {position: relative; display: block; width:588px; height:440px;}
 
 	 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
