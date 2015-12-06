@@ -69,9 +69,22 @@
 }
 
 .bottom-holder {
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	padding: 10px;
+	width: 100%;
+	padding-top: 20px;
+}
+
+.bottom-holder:before {
+	content: '';
+	background-image: url('../img/white-gradient.png');
+	height: 100px;
+}
+
+.bottom-holder {
+
 }
 
 #input-field input{
@@ -88,7 +101,7 @@
 }
 
 .text-update-text {
-	padding: 0px 0px 10px 10px;
+	padding: 0px 0px 5px 10px;
 }
 
 .broadcastButton {
@@ -160,6 +173,16 @@ div.broadcast {
     content: '';
     text-transform: none;
     font-weight: 800;
+}
+
+
+.login-input {
+	display: block;
+}
+
+.bottom-holder {
+	/*background-image: url("../img/white-gradient.png");*/
+	background-color: #fff;
 }
 
 
