@@ -8,8 +8,10 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 		});
 }]).controller('SimpleMapCtrl', function ($scope) {
 		var esriMap;
+        var broadcaster = [];
         var longitude;
         var latitude;
+        var lastMessage;
 
 
 		$scope.map = {
@@ -38,18 +40,22 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
         
         socket.on('message', socket_received);
         function socket_received(obj) {
-            longitude = obj.lon;
-            latitude = obj.lat;
-            generateDiv(esriMap, obj.lon, obj.lat);
+            // TODO push new broadcaster if they appear
+            if(!broadcaster.lenght) {
+                broadcaster.push(obj);
+            }
+            generateDiv(esriMap, obj.lon, obj.lat, obj.message);
         }
 
 		function changeHandler(evt) {
-			generateDiv(esriMap, longitude, latitude);
+            broadcaster.forEach(function(obj) {
+                generateDiv(esriMap, obj.lon, obj.lat, obj.message);
+            });
 		}
 
     
-    		function generateDiv(map, lon, lat) {
-                if(lon){
+    		function generateDiv(map, lon, lat, message) {
+                if(lon && document.getElementById("container")){
 					var point = new esri.geometry.Point(lon, lat);
 					var screenPoint = map.toScreen(point);
 
@@ -57,14 +63,11 @@ angular.module('myApp.mapview', ['ngRoute', 'esri.map'])
 					var final_x = screenPoint.x + screen_point.x;
 					var final_y = screenPoint.y + screen_point.y;
 
-					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> copper box arena</h3>';
+					var html = '<h3 id="broadcasterCircle" class="roundText" style="position: absolute; top: '+final_y+'px; left: '+final_x+'px; z-index:10000000;"> '+message.substring(message.length>16 ? message.length-16 : 0, message.length)+'</h3>';
                     
-					if(document.getElementById("container")){
-						document.getElementById("container").innerHTML = html;
-            			$('#broadcasterCircle').show().arctext({radius: 15});
-					}
+					document.getElementById("container").innerHTML = html;
+                    $('#broadcasterCircle').show().arctext({radius: 15});
                 }
 
 		}
-
 	});
